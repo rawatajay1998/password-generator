@@ -1,0 +1,215 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  font-family: "IBM Plex Mono", monospace;
+}
+
+.container {
+  max-width: 600px;
+  margin-top: 50px;
+  margin-inline: auto;
+  background: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  padding: 50px 30px;
+  border-radius: 10px;
+}
+
+.container h1 {
+  text-align: center;
+  padding-bottom: 30px;
+  color: #5a19cd;
+}
+
+.password__block {
+  display: flex;
+  gap: 30px;
+  align-items: center;
+}
+.generated__password {
+  border: 1px solid #ddd;
+  width: 100%;
+  border-radius: 4px;
+  height: 45px;
+  display: flex;
+  align-items: center;
+  padding-left: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+.password__block .copy__btn {
+  height: 45px;
+  border-radius: 4px;
+  min-width: max-content;
+  padding-inline: 20px;
+  font-weight: 500;
+  font-family: "IBM Plex Mono", monospace;
+  border: 1px solid #5a19cd;
+  background: transparent;
+  color: #5a19cd;
+  cursor: pointer;
+  transition: 0.3s ease-in;
+  position: relative;
+}
+.password__block .copy__btn.copied {
+  background: #5a19cd;
+  border: 1px solid transparent;
+  color: #fff;
+  transition: 0.3s ease-out;
+}
+.password__block .copy__btn .popover {
+  display: none;
+}
+.password__block .copy__btn.copied .popover {
+  display: block;
+  position: absolute;
+  top: -30px;
+  right: 30px;
+  font-size: 14px;
+  color: #5a19cd;
+}
+.password_slider_block {
+  padding-top: 30px;
+}
+.password_slider_block p {
+  font-size: 16px;
+  font-weight: 500;
+  padding-bottom: 10px;
+}
+.password_length_selector {
+  background: #5a19cd;
+  border-radius: 4px;
+  height: 7px;
+  width: 100%;
+  outline: none;
+  appearance: none;
+}
+
+.password_length_selector::-webkit-slider-thumb {
+  width: 20px;
+  height: 20px;
+  border-radius: 4px;
+  appearance: none;
+  cursor: pointer;
+  background: #fff;
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  border: 1px solid #5a19cd;
+}
+
+.input__checkbox__container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding-block: 50px;
+}
+.input__selector_field {
+  margin-bottom: 20px;
+}
+.input__checkbox__container label {
+  font-family: "IBM Plex Mono", monospace;
+  font-size: 18px;
+  font-weight: 600;
+  padding-left: 10px;
+}
+.input__checkbox__container input {
+  position: relative;
+  height: 16px;
+  width: 16px;
+  cursor: pointer;
+  appearance: none;
+}
+.input__checkbox__container input::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  border-radius: 4px;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  border: 1px solid #5a19cd;
+}
+.input__checkbox__container input:checked::before {
+  background: #5a19cd;
+}
+.generate__btn__block {
+  text-align: center;
+}
+.generate__passowrd__btn {
+  height: 45px;
+  border-radius: 4px;
+  min-width: max-content;
+  padding-inline: 20px;
+  font-weight: 500;
+  font-family: "IBM Plex Mono", monospace;
+  background: #5a19cd;
+  color: #fff;
+  border: none;
+  cursor: pointer;
+  margin-inline: auto;
+}
+.recent_passwords_generated {
+  padding-top: 50px;
+}
+.recent_passwords_generated h4 {
+  font-size: 18px;
+  padding-bottom: 20px;
+}
+.generated__passwords_list {
+  list-style: none;
+}
+.generated__passwords_list li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+}
+.generated__passwords_list .delete__btn {
+  border: none;
+  background: transparent;
+}
+.generated__passwords_list li span.pass {
+  font-size: 15px;
+  font-weight: 600;
+  margin-inline: 20px auto;
+}
+.generated__passwords_list li .copy__btn {
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  position: relative;
+}
+.generated__passwords_list li .copy__btn .popover {
+  display: none;
+  font-size: 12px;
+}
+.generated__passwords_list li .copy__btn.copied .popover {
+  display: block;
+  position: absolute;
+  right: 30px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+@media (max-width: 600px) {
+  .container {
+    margin-inline: 20px;
+    padding: 20px;
+  }
+  .container h1 {
+    font-size: 24px;
+  }
+  .password__block {
+    flex-direction: column;
+    gap: 10px;
+    align-items: flex-start;
+  }
+
+  .input__checkbox__container {
+    grid-template-columns: 1fr;
+    padding-block: 30px;
+  }
+  .input__checkbox__container label {
+    font-size: 14px;
+  }
+}
